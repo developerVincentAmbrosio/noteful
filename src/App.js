@@ -5,7 +5,7 @@ import NoteListNav from './NoteListNav/NoteListNav';
 import NotePageNav from './NotePageNav/NotePageNav';
 import NoteListMain from './NoteListMain/NoteListMain';
 import NotePageMain from './NotePageMain/NotePageMain';
-import ApiContext from '../ApiContext';
+import ApiContext from './ApiContext';
 import config from './config';
 //import dummyStore from './dummyStore';
 //import {getNotesForFolder, findNote, findFolder} from './notes-helpers';
