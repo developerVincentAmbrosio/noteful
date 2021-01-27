@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { format } from 'date-fns'
+//import { format } from 'date-fns'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ApiContext from '../ApiContext'
 import config from '../config'
@@ -14,9 +14,10 @@ export default class Note extends React.Component {
 
   handleClickDelete = e => {
     e.preventDefault()
-    const noteID = this.props.id
+    console.log(this.props)
+    const noteId = this.props.id
 
-  fetch(`${config.API_ENDPOINT}/notes/${noteID}`, {
+  fetch(`${config.API_ENDPOINT}/notes/${noteId}`, {
     method: 'DELETE',
     headers: {
       'content-type': 'application/json'
@@ -39,6 +40,7 @@ export default class Note extends React.Component {
 
   render () {
     const { name, id, modified } = this.props
+
     return (
       <div className='Note'>
         <h2 className='Note__title'>
@@ -60,7 +62,7 @@ export default class Note extends React.Component {
             Modified
             {' '}
             <span className='Date'>
-              {format ? (props.modified, 'DD MMM YYYY') : null}
+              { modified ? new Date(modified).toLocaleString(): null}
             </span>
           </div>
         </div>
